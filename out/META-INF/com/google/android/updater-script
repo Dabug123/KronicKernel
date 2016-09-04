@@ -12,7 +12,7 @@ ifelse(is_mounted("/system") == "/system", unmount("/system"));
 ifelse(is_mounted("/cache") == "/cache", unmount("/cache"));
 
 ui_print("  ");
-ui_print("Kylo Kernel by DespairFactor");
+ui_print("kronic Kernel by Dabug123");
 ui_print("  ");
 set_progress(0.01);
 
@@ -79,6 +79,6 @@ run_program("/sbin/busybox", "umount", "/cache");
 set_progress(1.0);
 
 ui_print("######################");
-ui_print("#      Kernel flashed, enjoy!");
+ui_print("#      Kernel flashed, Aosipftw!");
 ui_print("######################");
 
