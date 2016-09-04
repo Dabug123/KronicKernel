@@ -12,23 +12,23 @@ clear
 THREAD="-j$(grep -c ^processor /proc/cpuinfo)"
 KERNEL="Image"
 DTBIMAGE="dtb"
-DEFCONFIG="kylo_defconfig"
+DEFCONFIG="kronic_defconfig"
 
 # Kernel Details
-VER=".R37.angler."
+VER=".alpha1."
 
 # Paths
 KERNEL_DIR=`pwd`
-REPACK_DIR="${HOME}/android/AK-OnePone-AnyKernel2"
-PATCH_DIR="${HOME}/android/AK-OnePone-AnyKernel2/patch"
-MODULES_DIR="${HOME}/android/AK-OnePone-AnyKernel2/modules"
-ZIP_MOVE="${HOME}/android/AK-releases"
-ZIMAGE_DIR="${HOME}/android/angler/arch/arm64/boot/"
+REPACK_DIR="${HOME}/AK-Angler-AnyKernel2"
+PATCH_DIR="${HOME}/AK-Angler-AnyKernel2/patch"
+MODULES_DIR="${HOME}/AK-Angler-AnyKernel2/modules"
+ZIP_MOVE="${HOME}/KronicKernel/AK-releases"
+ZIMAGE_DIR="${HOME}/KronicKernel/arch/arm64/boot/"
 
 # Functions
 function clean_all {
 		rm -rf $MODULES_DIR/*
-		cd ~/android/angler/out/kernel
+		cd ~/KronicKernel/out/kernel
 		rm -rf $DTBIMAGE
 		git reset --hard > /dev/null 2>&1
 		git clean -f -d > /dev/null 2>&1
@@ -54,14 +54,14 @@ function make_dtb {
 }
 
 function make_boot {
-		cp -vr $ZIMAGE_DIR/Image.gz-dtb ~/android/angler/out/kernel/zImage
+		cp -vr $ZIMAGE_DIR/Image.gz-dtb ~/KronicKernel/out/kernel/zImage
 		
 		. appendramdisk.sh
 }
 
 
 function make_zip {
-		cd ~/android/angler/out
+		cd ~/KronicKernel/out
 		zip -r9 `echo $AK_VER`.zip *
 		mv  `echo $AK_VER`.zip $ZIP_MOVE
 		cd $KERNEL_DIR
@@ -73,7 +73,7 @@ DATE_START=$(date +"%s")
 
 echo -e "${green}"
 echo "-----------------"
-echo "Making Kylo Kernel:"
+echo "Making Kronic Kernel:"
 echo "-----------------"
 echo -e "${restore}"
 
@@ -116,7 +116,7 @@ case "$echoice" in
 		break
 		;;
 	6 )
-		export CROSS_COMPILE=${HOME}/android/linarobuild/out/aarch64-linux-android-6.x-kernel/bin/aarch64-linux-android-
+		export CROSS_COMPILE=${HOME}/toolchain/aarch64-linux-android-6.x-kernel-linaro/bin/aarch64-linux-android-
 		TC="LINARO6.x"
 		echo
 		echo "Using Linaro 6.x"
@@ -145,14 +145,14 @@ esac
 done
 
 # Vars
-BASE_AK_VER="Kylo"
+BASE_AK_VER="KronicKernel"
 AK_VER="$BASE_AK_VER$VER$TC"
 export LOCALVERSION=~`echo $AK_VER`
 export LOCALVERSION=~`echo $AK_VER`
 export ARCH=arm64
 export SUBARCH=arm64
-export KBUILD_BUILD_USER=DespairFactor
-export KBUILD_BUILD_HOST=DarkRoom
+export KBUILD_BUILD_USER=Dabug123
+export KBUILD_BUILD_HOST=Aosip.xyz
 
 echo
 
