@@ -15,7 +15,7 @@ DTBIMAGE="dtb"
 DEFCONFIG="kronic_defconfig"
 
 # Kernel Details
-VER=".Beta5.1"
+VER=".Beta8.2"
 
 # Paths
 KERNEL_DIR=`pwd`
