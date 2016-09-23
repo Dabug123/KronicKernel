@@ -15,7 +15,7 @@ DTBIMAGE="dtb"
 DEFCONFIG="kronic_defconfig"
 
 # Kernel Details
-VER=".Beta8.2"
+VER=".Beta9.1"
 
 # Paths
 KERNEL_DIR=`pwd`
@@ -95,7 +95,7 @@ case "$echoice" in
 		break
 		;;
 	3 )
-		export CROSS_COMPILE=${HOME}/android/uberbuild/out/aarch64-linux-android-6.x-kernel/bin/aarch64-linux-android-
+		export CROSS_COMPILE=${HOME}/toolchain/aarch64-linux-android-6.x-kernel/bin/aarch64-linux-android-
 		TC="UBER6.x"
 		echo
 		echo "Using UBERTC 6.x"
@@ -152,7 +152,7 @@ export LOCALVERSION=~`echo $AK_VER`
 export ARCH=arm64
 export SUBARCH=arm64
 export KBUILD_BUILD_USER=Dabug123
-export KBUILD_BUILD_HOST=Aosip.xyz
+export KBUILD_BUILD_HOST=Kangbox
 
 echo
 
