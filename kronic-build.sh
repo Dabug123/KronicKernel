@@ -15,7 +15,7 @@ DTBIMAGE="dtb"
 DEFCONFIG="kronic_defconfig"
 
 # Kernel Details
-VER=".Beta9.1"
+VER=".Rc.2."
 
 # Paths
 KERNEL_DIR=`pwd`
@@ -109,7 +109,7 @@ case "$echoice" in
 		break
 		;;
 	5 )
-		export CROSS_COMPILE=${HOME}/android/linarobuild/out/aarch64-linux-android-5.x-kernel/bin/aarch64-linux-android-
+		export CROSS_COMPILE=${HOME}/toolchain/aarch64-linux-android-5.x-kernel-linaro/bin/aarch64-linux-android-
 		TC="LINARO5.x"
 		echo
 		echo "Using Linaro 5.x"
