@@ -30,7 +30,7 @@ fi
 
 scm_version()
 {
-
+	//do nothing
 }
 
 collect_files()
